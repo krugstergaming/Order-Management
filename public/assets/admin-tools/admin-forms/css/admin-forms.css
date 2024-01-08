@@ -202,7 +202,6 @@
 .admin-form .field-label em {
   color: #e74c3c;
   font-size: 14px;
-  font-style: normal;
   display: inline-block;
   margin-left: 4px;
   position: relative;
@@ -291,7 +290,6 @@
   content: '';
   position: absolute;
   font: 12px "Consolas", monospace;
-  font-style: normal;
   pointer-events: none;
   display: none\9;
   left: 5px;
@@ -772,7 +770,6 @@
 }
 .admin-form .tooltip > em {
   padding: 12px;
-  font-style: normal;
   display: block;
   position: static;
 }
@@ -949,7 +946,6 @@
   margin-top: 6px;
   padding: 0 3px;
   font-family: Arial, Helvetica, sans-serif;
-  font-style: normal;
   line-height: normal;
   font-size: 0.85em;
   color: #DE888A;
@@ -2380,11 +2376,7 @@
   margin-top: 6px;
   float: left;
   z-index: 0;
-}
-.sp-palette {
-  *width: 220px;
-  max-width: 220px;
-}
+
 .sp-palette .sp-thumb-el {
   width: 16px;
   height: 16px;
@@ -4094,78 +4086,4 @@
 }
 .admin-form.theme-dark .theme-link {
   color: #3b3f4f;
-}
-.admin-form.theme-dark .gui-input:hover,
-.admin-form.theme-dark .gui-textarea:hover,
-.admin-form.theme-dark .select > select:hover,
-.admin-form.theme-dark .select-multiple select:hover,
-.admin-form.theme-dark .gui-input:hover ~ .input-footer,
-.admin-form.theme-dark .file .gui-file:hover + .gui-input,
-.admin-form.theme-dark .gui-textarea:hover ~ .input-footer {
-  border-color: #424759;
-}
-.admin-form.theme-dark .gui-input:focus,
-.admin-form.theme-dark .gui-textarea:focus,
-.admin-form.theme-dark .select > select:focus,
-.admin-form.theme-dark .select-multiple select:focus {
-  border-color: #424759;
-  color: #3C3C3C;
-}
-.admin-form.theme-dark .gui-textarea:focus {
-  height: 120px;
-}
-.admin-form.theme-dark .select > select:focus {
-  z-index: 10;
-  z-index: 20\9;
-}
-.admin-form.theme-dark .gui-input:focus ~ .field-icon i,
-.admin-form.theme-dark .gui-textarea:focus ~ .field-icon i {
-  color: #3b3f4f;
-}
-.admin-form.theme-dark .select-multiple select:focus,
-.admin-form.theme-dark .gui-input:focus ~ .input-footer,
-.admin-form.theme-dark .gui-textarea:focus ~ .input-footer,
-.admin-form.theme-dark .file .gui-file:focus + .gui-input {
-  border-color: #424759;
-}
-.admin-form.theme-dark .select > select:focus + .arrow {
-  color: #3b3f4f;
-}
-.admin-form.theme-dark .rating:hover .rating-star:hover,
-.admin-form.theme-dark .rating:hover .rating-star:hover ~ .rating-star,
-.admin-form.theme-dark .rating-input:checked ~ .rating-star {
-  color: #3b3f4f;
-}
-.admin-form.theme-dark .rating-star,
-.admin-form.theme-dark .rating:hover .rating-star {
-  color: #A2A6A8;
-}
-.admin-form.theme-dark .ui-datepicker .ui-datepicker-prev,
-.admin-form.theme-dark .ui-datepicker .ui-datepicker-next,
-.admin-form.theme-dark .ui-datepicker .ui-datepicker-title {
-  color: #3b3f4f;
-}
-.admin-form.theme-dark .ui-datepicker-today a,
-.admin-form.theme-dark .ui-datepicker-today a:hover,
-.admin-form.theme-dark .ui-datepicker .ui-state-highlight {
-  background: #676e89 !important;
-}
-.admin-form.theme-dark .ui-datepicker .ui-state-active {
-  background: #3b3f4f !important;
-}
-.admin-form.theme-dark .ui-datepicker .ui-timepicker-div .ui-slider .ui-slider-handle.ui-state-active {
-  background: #FFF !important;
-}
-.admin-form.theme-dark .ui-datepicker .ui-timepicker-div .ui-slider .ui-slider-handle {
-  border-color: #3b3f4f;
-}
-.admin-form.theme-dark .ui-datepicker .ui-timepicker-div .ui-slider .ui-slider-handle:before {
-  background-color: #3b3f4f;
-}
-.admin-form.theme-dark .wizard .steps li a,
-.admin-form.theme-dark .wizard .actions li a {
-  background-color: #3b3f4f;
-}
-.admin-form.theme-dark .wizard .steps li.current a {
-  background-color: #2c2f3c;
 }
