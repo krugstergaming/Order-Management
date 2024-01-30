@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('landing');
 });
 
+Route::get('/customer', function () {
+    return view('customer_order');
+});
+
 Route::get('/order', function () {
     return view('ecommerce_orders');
 });
