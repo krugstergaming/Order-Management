@@ -121,7 +121,8 @@
                                 <div class="panel-body p25 pb5">
                                     <div class="tab-content pn br-n admin-form">
                                         <div id="tab1_1" class="tab-pane active">
-                                            
+
+                                <form>
                                             <!-- INPUT PANEL CUSTOMER INFO -->
                                             <div class="section row">
                                                 <div class="col-md-6">
@@ -217,7 +218,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -227,52 +229,23 @@
                                 <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">Order Date</th>
-                                <th scope="col">Order ID</th>
+                                <th scope="col">Full Name</th>
                                 <th scope="col">Product</th>
-                                <th scope="col">Status</th>
+                                <th scope="col">OrderStatus</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <th scope="row">1</th>
-                                    <td>01/29/24</td>
-                                    <td>Otto</td>
-                                    <td>Shoes</td>
-                                    <td><span class="badge badge-pill badge-primary">Pending</span></td>
+                                    @foreach ($orderItems as $item)
+                                    <!-- Display order item details -->
+                                    <td>{{ $item->OrderItemID }}</td>
+                                    <td>{{ $item->order->OrderDate }}</td>
+                                    <!-- Display customer details -->
+                                    <td>{{ $item->order->customer->FirstName . ' ' . $item->order->customer->LastName }}</td>
+                                    <td>{{ $item->product->ProductName }}</td>
+                                    <td><span class="badge badge-pill badge-primary">{{ $item->order->OrderStatus }}</span></td>
                                 </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>01/29/24</td>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td><span class="badge badge-pill badge-success">Recieved</span></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>01/29/24</td>
-                                    <td>Larry</td>
-                                    <td>the Bird</td>
-                                    <td><span class="badge badge-pill badge-success">Recieved</span></td>
-                                <tr>
-                                    <th scope="row">4</th>
-                                    <td>01/29/24</td>
-                                    <td>Larry</td>
-                                    <td>the Bird</td>
-                                    <td><span class="badge badge-pill badge-success">Recieved</span></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">5</th>
-                                    <td>01/29/24</td>
-                                    <td>Larry</td>
-                                    <td>the Bird</td>
-                                    <td><span class="badge badge-pill badge-success">Recieved</span></td>
-                                <tr>
-                                    <th scope="row">6</th>
-                                    <td>01/29/24</td>
-                                    <td>Larry</td>
-                                    <td>the Bird</td>
-                                    <td><span class="badge badge-pill badge-success">Recieved</span></td>
-                                </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
