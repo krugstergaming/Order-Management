@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id('OrderID');
             $table->unsignedBigInteger('CustomerID')->constrained('customers');
             $table->date('OrderDate')->nullable(false);
-            $table->string('OrderStatus', 10)->nullable(false);
+            $table->enum('OrderStatus', ['Processing', 'In-Delivery', 'Received', 'Cancelled'])->default('Processing');
             $table->timestamps();
 
             // Indexes

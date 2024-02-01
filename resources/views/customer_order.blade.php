@@ -229,8 +229,10 @@
                                 <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">Order Date</th>
+                                <th scope="col">Shipment Date</th>
                                 <th scope="col">Full Name</th>
                                 <th scope="col">Product</th>
+                                <th scope="col">Payment Type</th>
                                 <th scope="col">OrderStatus</th>
                                 </tr>
                             </thead>
@@ -240,9 +242,11 @@
                                     <!-- Display order item details -->
                                     <td>{{ $item->OrderItemID }}</td>
                                     <td>{{ $item->order->OrderDate }}</td>
+                                    <td>{{ $item->shipment->ShipmentDate}}</td>
                                     <!-- Display customer details -->
                                     <td>{{ $item->order->customer->FirstName . ' ' . $item->order->customer->LastName }}</td>
                                     <td>{{ $item->product->ProductName }}</td>
+                                    <td>{{ $item->shipment->payment->PaymentMethod}}</td>
                                     <td><span class="badge badge-pill badge-primary">{{ $item->order->OrderStatus }}</span></td>
                                 </tr>
                                 @endforeach

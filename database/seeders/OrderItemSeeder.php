@@ -6,6 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\OrderItem;
 use App\Models\Product;
+use App\Models\Shipment;
 
 class OrderItemSeeder extends Seeder
 {
@@ -14,13 +15,14 @@ class OrderItemSeeder extends Seeder
      */
     public function run()
     {
-        $product = Product::find(3); // Fetch the product with ID 1
+        $product = Product::find(1); // Fetch the product with ID 1
 
         OrderItem::create([
             'OrderID' => 1,
-            'ProductID' => 3,
-            'Quantity' => 3,
-            'Subtotal' => $product->Price * 3, // Multiply the product price by the quantity
+            'ProductID' => 1,
+            'ShipmentID' => 1,
+            'Quantity' => 2,
+            'Subtotal' => $product->Price * 2, // Multiply the product price by the quantity
         ]);
     }
 }

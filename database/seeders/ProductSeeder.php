@@ -14,11 +14,11 @@ class ProductSeeder extends Seeder
     public function run()
     {
         Product::create([
-            'ProductName' => 'Chicken Joy',
-            'Description' => 'Mahal amp!',
-            'Price' => 999.00,
-            'StockQuantity' => 25,
-            'Manufacturer' => 'Puregold Sta. Mesa',
+            'ProductName' => 'Chicken McDo',
+            'Description' => 'Panget ng mix and match',
+            'Price' => 99.00,
+            'StockQuantity' => 30,
+            'Manufacturer' => 'Fairview Terrecces',
             'Category' => 'Food',
             
         ]);

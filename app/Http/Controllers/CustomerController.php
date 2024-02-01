@@ -9,7 +9,7 @@ class CustomerController extends Controller
 {
     public function customerIndex()
     {
-        $orderItems = OrderItem::with(['order', 'product'])->get();
+        $orderItems = OrderItem::with(['order', 'product', 'shipment'])->get();
 
         return view('customer_order', compact('orderItems'));
     }

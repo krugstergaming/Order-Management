@@ -14,8 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create('shipments', function (Blueprint $table) {
-            $table->bigInteger('ShipmentID')->unsigned()->primary();
-            $table->unsignedBigInteger('OrderID')->constrained('ordersummary');
+            $table->id('ShipmentID');
+            $table->unsignedBigInteger('PaymentID')->constrained('payments');
             $table->date('ShipmentDate')->nullable(false);
             $table->string('ShipmentAddress', 100)->nullable(false);
             $table->enum('ShipmentStatus', ['active', 'inactive'])->default('active');
@@ -23,9 +23,9 @@ return new class extends Migration
             $table->timestamps();
 
             // Indexes
-            $table->index('OrderID');
+            $table->index('PaymentID');
 
-            $table->foreign('OrderID')->references('OrderID')->on('ordersummary');
+            $table->foreign('PaymentID')->references('PaymentID')->on('payments');
         });
     }
 

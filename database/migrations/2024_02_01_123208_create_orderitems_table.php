@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id('OrderItemID');
             $table->unsignedBigInteger('OrderID')->constrained('ordersummary');
             $table->unsignedBigInteger('ProductID')->constrained('products');
+            $table->unsignedBigInteger('ShipmentID')->constrained('shipments');
             $table->integer('Quantity')->nullable(false);
             $table->decimal('Subtotal', 8, 2)->nullable(false);
             $table->timestamps();
@@ -24,9 +25,11 @@ return new class extends Migration
             // Indexes
             $table->index('OrderID');
             $table->index('ProductID');
+            $table->index('ShipmentID');
 
             $table->foreign('OrderID')->references('OrderID')->on('ordersummary');
             $table->foreign('ProductID')->references('ProductID')->on('products');
+            $table->foreign('ShipmentID')->references('ShipmentID')->on('shipments');
         });
     }
 
