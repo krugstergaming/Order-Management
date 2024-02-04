@@ -15,7 +15,7 @@ class OrderSumSeeder extends Seeder
     public function run()
     {
         OrderSummary::create([
-            'CustomerID' => 1,
+            'CustomerID' => 2,
             'OrderDate' => Carbon::now()->format('Y-m-d'),
             'OrderStatus' => 'Processing',
         ]);

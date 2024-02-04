@@ -16,7 +16,7 @@ class PaymentSeeder extends Seeder
     {
         Payment::create([
             'PaymentDate' => Carbon::now()->format('Y-m-d'),
-            'PaymentMethod' => 'COD',
+            'PaymentMethod' => 'Credit Card',
             'AmountTotal' => 500.00,
         ]);
     }

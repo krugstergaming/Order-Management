@@ -15,11 +15,11 @@ class ShipmentSeeder extends Seeder
     public function run()
     {
         Shipment::create([
-            'PaymentID' => 1,
+            'PaymentID' => 2,
             'ShipmentDate' => Carbon::now()->format('Y-m-d'),
             'ShipmentAddress' => '123 Main Street',
             'ShipmentStatus' => 'active',
-            'TrackingNumber' => 'TRACK123',
+            'TrackingNumber' => 'TRACK124',
         ]);
     }
 }

@@ -18,7 +18,7 @@ Route::get('/', function () {
     return view('landing');
 });
 
-Route::get('/customer', [CustomerController::class, 'customerIndex']);
+Route::get('/customer/{customerId}', [CustomerController::class, 'customerIndex']);
 
 Route::get('/order', function () {
     return view('ecommerce_orders');
