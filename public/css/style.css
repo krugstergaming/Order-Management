@@ -180,4 +180,12 @@ footer>p {
     width: 92.5rem;
 }
 
+#customerSection {
+    display: block;
+}
+
+#shippingSection {
+    display: none;
+}
+
 

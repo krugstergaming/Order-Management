@@ -1,0 +1,190 @@
+*{
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: pop;
+    src: url(./Fonts/Poppins-Medium.ttf);
+}
+/* order processing centered */
+.second-row{
+    padding-left: 15%;
+    font-family: pop;
+    flex-direction: column;
+}
+
+.col{
+    background-color: #9DDBAD;
+}
+
+.class1{
+    background-color: rgb(160, 160, 160);
+    color:black
+}
+
+nav.nav-pills.flex-column {
+    margin: auto;
+}
+
+.row-col{
+    padding-top: 20px;
+    background-color: rgb(249, 247, 247);
+}
+
+/* Styles for the first block */
+.my-first-block ul {
+    display: flex;
+    margin-top: 5px;
+}
+
+.my-first-block ul li {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.my-first-block ul li .icon {
+    font-size: 35px;
+    color: black;
+    margin: 0 60px;
+}
+
+.my-first-block ul li .text {
+    font-size: 14px;
+    font-weight: 600;
+    color: black;
+}
+
+
+span.fs-d {
+    font-size: 35px;
+    color: black;
+    margin: 15px
+}
+
+i.sidebar{
+    color: black;
+    font-size: 30px;
+    margin-left: 10px;
+}
+
+ul.nav.nav-pills li.nav-item a.nav-link span.sidetext {
+    font-size: 90% !important;
+    margin: 0px !important;
+    color: black;
+}
+
+/* Progress Div Css  */
+
+.progress{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgba(68, 68, 68, 0.781);
+    margin: 14px 0;
+    display: grid;
+    place-items: center;
+    padding-top: 5px;
+    color: #fff;
+    position: relative;
+    cursor: pointer; 
+}
+.progress::after{
+    content: " ";
+    position: absolute;
+    width: 125px, !important;
+    height: 5px, !important;
+    background-color: rgb(253, 12, 12);
+    right: 30px;
+}
+.one::after{
+    width: 0;
+    height: 0;
+}
+ul li .progress .uil{
+    display: none;
+}
+ul li .progress p{
+    font-size: 13px;
+}
+
+/* Active Css  */
+
+ul li .active{
+    background-color: #3300ff;
+    display: grid;
+    place-items: center;
+}
+li .active::after{
+    background-color: #3300ff;
+}
+ul li .active p{
+    display: none;
+}
+ul li .active .uil{
+    font-size: 20px;
+    display: flex;
+}
+
+.col.status.ul{
+    flex-direction: column;
+}
+.col.status.ul li{
+    flex-direction: row;
+}
+.col.status.ul li .progress{
+    margin: 0 30px;
+}
+.col.status.progress::after{
+    width: 5px;
+    height: 55px;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+.col.status.one::after{
+    height: 0;
+}
+.col.status.ul li .icon{
+    margin: 15px 0;
+}
+
+/* Responsive Css  */
+
+@media (max-width: 980px) {
+    ul{
+        flex-direction: column;
+    }
+    ul li{
+        flex-direction: row;
+    }
+    ul li .progress{
+        margin: 0 30px;
+    }
+    .progress::after{
+        width: 5px;
+        height: 55px;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: -1;
+    }
+    .one::after{
+        height: 0;
+    }
+    ul li .icon{
+        margin: 15px 0;
+    }
+}
+
+
+@media (max-width: 1000px) {
+    .sidetext {
+        display: none !important;
+    }
+    span.fs-d{
+        display: none !important;
+    }
+}
