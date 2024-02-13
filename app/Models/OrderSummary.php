@@ -9,8 +9,11 @@ class OrderSummary extends Model
 {
     use HasFactory;
 
-    protected $table = 'ordersummary';
+    protected $table = 'r_ordersummary';
     protected $primaryKey = 'OrderID';
+    protected $fillable = ['OrderStatus'];
+    const ORDER_STATUSES = ['Confirmed', 'Processing', 'Shipping', 'In-Delivery', 'Received', 'Returned'];
+
 
     public function customer()
     {

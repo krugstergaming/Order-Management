@@ -9,7 +9,7 @@ class OrderItem extends Model
 {
     use HasFactory;
 
-    protected $table = 'orderitems';
+    protected $table = 't_orderitems';
     protected $primaryKey = 'OrderItemID';
 
     public function order()
@@ -25,5 +25,10 @@ class OrderItem extends Model
     public function shipment()
     {
         return $this->belongsTo(Shipment::class, 'ShipmentID');
+    }
+
+    public function payment()
+    {
+        return $this->belongsTo(Payment::class, 'PaymentID');
     }
 }

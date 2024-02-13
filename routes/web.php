@@ -18,8 +18,13 @@ Route::get('/', function () {
     return view('landing');
 });
 
-Route::get('/customer/{customerId}', [CustomerController::class, 'customerIndex']);
+// Route::get('/customer', [CustomerController::class, 'customerIndex']);
 
-Route::get('/order', function () {
-    return view('ecommerce_orders');
-});
+Route::get('/customer/{customerId?}', [CustomerController::class, 'customerIndexID']);
+
+Route::get('/order', [CustomerController::class, 'orderIndexID']);
+
+Route::put('/order/{orderItemId}/status', [CustomerController::class, 'updateOrderStatus']);
+
+
+// {orderId}

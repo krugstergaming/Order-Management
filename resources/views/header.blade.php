@@ -18,4 +18,14 @@
 
     </div>
 
+    {{-- <style>
+        .status-confirmed { background-color: #00ff00; color: #ffffff; padding:  2px; } /* Green background with white text */
+        .status-processing { background-color: #ffff00; color: #000000; padding:  2px; } /* Yellow background with black text */
+        .status-shipping { background-color: #0000ff; color: #ffffff; padding:  2px; } /* Blue background with white text */
+        .status-in-delivery { background-color: #ff00ff; color: #ffffff; padding:  2px; } /* Magenta background with white text */
+        .status-received { background-color: #00ffff; color: #000000; padding:  2px; } /* Cyan background with black text */
+        .status-returned { background-color: #ff0000; color: #ffffff; padding:  2px; } /* Red background with white text */
+    </style> --}}
+
+
 </header>

@@ -13,12 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('payments', function (Blueprint $table) {
+        Schema::create('t_payments', function (Blueprint $table) {
             $table->id('PaymentID');
             // $table->unsignedBigInteger('OrderID')->constrained('ordersummary');
             $table->date('PaymentDate')->nullable(false);
-            $table->enum('PaymentMethod', ['COD', 'E-payment', 'Credit Card'])->nullable(false);
-            $table->decimal('AmountTotal', 8, 2)->nullable(false);
+            $table->enum('PaymentMethod', ['E-payment'])->dafault('E-payment');
             $table->timestamps();
 
             // Indexes
@@ -35,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('payments');
+        Schema::dropIfExists('t_payments');
     }
 };

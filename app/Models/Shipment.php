@@ -8,12 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Shipment extends Model
 {
     use HasFactory;
-
-    protected $table = 'shipments';
+    protected $table = 't_shipments';
     protected $primaryKey = 'ShipmentID';
-
-    public function payment()
-    {
-        return $this->belongsTo(Payment::class, 'PaymentID');
-    }
 }

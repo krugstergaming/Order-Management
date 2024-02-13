@@ -13,19 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('shipments', function (Blueprint $table) {
+        Schema::create('t_shipments', function (Blueprint $table) {
             $table->id('ShipmentID');
-            $table->unsignedBigInteger('PaymentID')->constrained('payments');
             $table->date('ShipmentDate')->nullable(false);
             $table->string('ShipmentAddress', 100)->nullable(false);
             $table->enum('ShipmentStatus', ['active', 'inactive'])->default('active');
             $table->string('TrackingNumber')->unique();
             $table->timestamps();
-
-            // Indexes
-            $table->index('PaymentID');
-
-            $table->foreign('PaymentID')->references('PaymentID')->on('payments');
         });
     }
 
@@ -36,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('shipments');
+        Schema::dropIfExists('t_shipments');
     }
 };
