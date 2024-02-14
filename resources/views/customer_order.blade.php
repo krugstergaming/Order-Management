@@ -161,6 +161,7 @@
             </div>
         </div>
 
+        <!-- [PRODUCT DETAILS] SCRIPT INCLUDES CANCEL/ RETRUN BUTTON-->
         <script>
             document.addEventListener("DOMContentLoaded", function() {
                 // Get the modal element
