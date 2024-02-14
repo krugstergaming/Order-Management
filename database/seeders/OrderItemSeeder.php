@@ -17,28 +17,28 @@ class OrderItemSeeder extends Seeder
         // Define an array of order items
         $orderItems = [
             [
-                'OrderID' =>  19,
+                'OrderID' =>  20,
                 'ProductID' =>  1,
                 'ShipmentID' =>  1,
                 'PaymentID' =>  1,
                 'Quantity' =>  2,
             ],
             [
-                'OrderID' =>  15,
+                'OrderID' =>  16,
                 'ProductID' =>  2,
                 'ShipmentID' =>  2,
                 'PaymentID' =>  2,
                 'Quantity' =>  3,
             ],
             [
-                'OrderID' =>  13,
+                'OrderID' =>  14,
                 'ProductID' =>  3,
                 'ShipmentID' =>  3,
                 'PaymentID' =>  3,
                 'Quantity' =>  4,
             ],
             [
-                'OrderID' =>  11,
+                'OrderID' =>  12,
                 'ProductID' =>  4,
                 'ShipmentID' =>  4,
                 'PaymentID' =>  4,

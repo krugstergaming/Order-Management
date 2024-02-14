@@ -7,8 +7,12 @@
 <!-- UniIcon CDN Link  -->
 <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
-<!-- Paginate CDN Link -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap 5 CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+<!-- Data Table CSS -->
+<link rel='stylesheet' href='https://cdn.datatables.net/1.13.5/css/dataTables.bootstrap5.min.css'>
+<!-- Font Awesome CSS -->
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css'>
 
 <body>
     <!-- <div class="main"> -->
@@ -59,7 +63,7 @@
 
                 <div class="col border">
                     <div class = "row row-col">
-                        <table class="table table-hover">
+                        <table id="example" class="table table-hover">
                             <thead>
                                 <tr>
                                 <th scope="col">ORDER ID</th>
@@ -71,8 +75,8 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    @forelse ($orderItems as $item)
-                                    <td>{{ $item->OrderItemID}}</td>
+                                    @forelse ($orderItems as $index => $item)
+                                    <td>{{ $index + 1 }}</td>
                                     <td>{{ $item->product->ProductName }}</td>
                                     <td>
                                         @switch($item->order->OrderStatus)
@@ -125,11 +129,11 @@
                                 @endforelse
                             </tbody>
                         </table>
-                        @if ($orderItems->hasPages())
+                        {{-- @if ($orderItems->hasPages())
                         <div class="d-flex justify-content-end">
                             {!! $orderItems->links() !!}
                         </div>
-                        @endif
+                        @endif --}}
                     
                     </div>
                 </div>
@@ -161,6 +165,8 @@
             </div>
         </div>
 
+        <!-- jQuery -->
+        <script src='https://code.jquery.com/jquery-3.7.0.js'></script>
         <!-- [PRODUCT DETAILS] SCRIPT INCLUDES CANCEL/ RETRUN BUTTON-->
         <script>
             document.addEventListener("DOMContentLoaded", function() {
@@ -203,9 +209,37 @@
             });
         </script>
 
+        <!-- SCRIPT FOR DATATABLE AND SEARCH -->
+        <script>
+            $(document).ready(function() {
+            $('#example').DataTable({
+            //disable sorting on last column
+            "pageLength": 6, // Set default page length to 7
+            "columnDefs": [
+                { "orderable": false, "targets": 4 }
+            ],
+            language: {
+                //customize pagination prev and next buttons: use arrows instead of words
+                'paginate': {
+                'previous': '<span class="fa fa-chevron-left"></span>',
+                'next': '<span class="fa fa-chevron-right"></span>'
+                },
+                //customize number of elements to be displayed
+                "lengthMenu": 'Display <select class="form-control input-sm">'+
+                '<option value="6">6</option>'+ // Set default to 7
+                // '<option value="20">20</option>'+
+                // '<option value="30">30</option>'+
+                // '<option value="40">40</option>'+
+                // '<option value="50">50</option>'+
+                // '<option value="-1">All</option>'+
+                '</select> results',
+                
+            }
+            })  
+            } );
+        </script>
+
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-        <!-- jQuery -->
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <!-- Admin Forms JS -->
         <script src="{{ asset('order-asset/admin-tools/admin-forms/js/jquery-ui-datepicker.min.js') }}"></script>
         <!-- Theme Javascript -->

@@ -12,14 +12,13 @@ class CustomerController extends Controller
 {
     public function customerIndexID(?int $customerId=null)
 {
-    $perPage =  5;
     $customerDetails = Customer::where('CustomerID', $customerId)->first();
 
     $orderItems = OrderItem::with(['order', 'product', 'shipment', 'payment'])
         ->whereHas('order', function ($query) use ($customerId) {
             $query->where('CustomerID', $customerId);
         })
-        ->paginate($perPage);
+        ->get();
 
     return view('customer_order', compact('orderItems', 'customerDetails'));
 }
