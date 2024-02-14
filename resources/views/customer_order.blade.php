@@ -23,7 +23,7 @@
                     </a>
                     <ul class="nav nav-pills flex-column">
                         <li class="nav-item">
-                            <a href="#" class="nav-link text-white">
+                            <a href="#1" class="nav-link text-white">
                                 <i class="uil uil-user sidebar"></i>
                                 <span class="fs-4 ms-3 d-done d-sm-inline sidetext">My Account</span>
                             </a>
@@ -31,7 +31,7 @@
                     </ul>
                     <ul class="nav nav-pills flex-column">
                         <li class="nav-item">
-                            <a href="#" class="nav-link text-white">
+                            <a href="#2" class="nav-link text-white">
                                 <i class="uil uil-transaction sidebar"></i>
                                 <span class="fs-4 ms-3 d-done d-sm-inline sidetext">Purchases</span>
                             </a>
@@ -39,7 +39,7 @@
                     </ul>
                     <ul class="nav nav-pills flex-column">
                         <li class="nav-item">
-                            <a href="#" class="nav-link text-white">
+                            <a href="#3" class="nav-link text-white">
                                 <i class="uil uil-shopping-cart-alt sidebar"></i>
                                 <span class="fs-4 ms-3 d-done d-sm-inline sidetext">Add To Cart</span>
                             </a>
@@ -55,113 +55,9 @@
                     </ul>
                 </div>
 
-                <!-- Order Processing Status -->
+                <!-- ORDER PROCESSING STATUS -->
 
                 <div class="col border">
-                    {{-- <div class="row second-row my-first-block">
-                        <ul>
-                            <li>
-                                <i class="icon uil uil-capture"></i>
-                                <div class="progress one">
-                                    <p>1</p>
-                                    <i class="uil uil-check"></i>
-                                </div>
-                                <p class="text">Order Confirmed</p>
-                            </li>
-                            <li>
-                                <i class="icon uil uil-clipboard-notes"></i>
-                                <div class="progress two">
-                                    <p>2</p>
-                                    <i class="uil uil-check"></i>
-                                </div>
-                                <p class="text">Preparing Order</p>
-                            </li>
-                            <li>
-                                <i class="icon uil uil-credit-card"></i>
-                                <div class="progress three">
-                                    <p>3</p>
-                                    <i class="uil uil-check"></i>
-                                </div>
-                                <p class="text">Shipping Order</p>
-                            </li>
-                            <li>
-                                <i class="icon uil uil-exchange"></i>
-                                <div class="progress four">
-                                    <p>4</p>
-                                    <i class="uil uil-check"></i>
-                                </div>
-                                <p class="text">In Shippment</p>
-                            </li>
-                            <li>
-                                <i class="icon uil uil-map-marker"></i>
-                                <div class="progress five">
-                                    <p>5</p>
-                                    <i class="uil uil-check"></i>
-                                </div>
-                                <p class="text">Order Arrived</p>
-                            </li>
-                        </ul>
-                    </div> --}}
-
-                    <!-- Fillout Forms (for guests) -->
-                    <div class = "row row-col border">
-                        <div class="tray tray-center">
-                            <!-- create new order panel -->
-                            <div class="panel mb25 mt5">
-                                {{-- <div class="panel-heading">
-                                    <span class="panel-title hidden-xs">Customer Details</span>
-                                    <ul class="nav panel-tabs-border panel-tabs">
-                                        <li class="active">
-                                            <a href="#tab1_1" data-toggle="tab">Customer</a>
-                                        </li>
-                                        <li>
-                                            <a href="#tab1_3" data-toggle="tab">Shipping</a>
-                                        </li>
-                                    </ul>
-                                </div> --}}
-
-                                
-                                <div class="panel-body p25 pb5">
-                                    <div class="tab-content pn br-n admin-form">
-                                        <div id="tab1_1" class="tab-pane active">
-
-                                            <div class="panel-body p25 pb5">
-                                                <div class="tab-content pn br-n admin-form">
-            
-                                                        <!-- INPUT PANEL CUSTOMER INFO -->
-                                                        <div class="section row">
-                                                            <div class="col-md-6">
-                                                                <label>
-                                                                    Name: {{ $customerDetails->FirstName . ' ' .  $customerDetails->LastName }}
-                                                                </label>
-                                                            </div>
-            
-                                                            <div class="col-md-6">
-                                                                <label>
-                                                                    Email: {{ $customerDetails->Email }}
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <!-- end section -->
-            
-                                                        <div class="section row">
-                                                            <div class="col-md-6">
-                                                                <label>
-                                                                    Address: {{ $customerDetails->Address }}
-                                                                </label>
-                                                            </div>
-            
-                                                            <div class="col-md-6">
-                                                                <label>
-                                                                    Phone: {{ $customerDetails->Phone }}
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <!-- end section -->
-                                                    </div>
-                            </div>
-                        </div>
-                    </div>
                     <div class = "row row-col">
                         <table class="table table-hover">
                             <thead>
@@ -170,6 +66,7 @@
                                 <th scope="col">PRODUCT NAME</th>
                                 <th scope="col">ORDER STATUS</th>
                                 <th scope="col">DETAILS</th>
+                                <th scope="col">TO RATE</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -201,19 +98,29 @@
                                                 {{ $item->order->OrderStatus }}
                                         @endswitch
                                     </td>
+
+                                    <!-- [PRODUCT DETAILS] TRIGGERED VIA VIEW BUTTON -->
                                     <td>
                                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#detailModal"   
                                         data-order-date="{{ $item->order->OrderDate }}"   
                                         data-shipment-date="{{ $item->shipment->ShipmentDate }}"   
                                         data-subtotal="{{ $item->Subtotal }}"   
-                                        data-order-item-id="{{ $item->OrderItemID }}"> <!-- Added this line -->
+                                        data-order-item-id="{{ $item->OrderItemID }}"
+                                        data-order-status="{{ $item->order->OrderStatus }}"> <!-- Added this line -->
+                                        
                                         View
-                                    </button>
+                                        </button>
+                                    </td>
+
+                                    <!-- REDIRECT TO RATINGS AND REVIEWS -->
+                                    <td>
+                                        <button type="button" class="btn btn-dark">Rate
+                                        </button>
                                     </td>
                                 </tr>
                                 @empty
                                 <tr>
-                                    <td colspan="3">There are no user!</td>
+                                    <td colspan="3">No orders were made</td>
                                 </tr>
                                 @endforelse
                             </tbody>
@@ -227,21 +134,24 @@
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Product Details -->
+        <!-- [PRODUCT DETAILS] PRODUCT DETAIL WHEN PRESSING VIEW BUTTON -->
         <div class="modal fade" id="detailModal" tabindex="-1" aria-labelledby="detailModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="detailModalLabel">Order Item Details</h5>
+
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
                     </div>
                     <div class="modal-body">
                         <p><strong>Order Date:</strong> <span id="orderDate"></span></p>
                         <p><strong>Shipment Date:</strong> <span id="shipmentDate"></span></p>
                         <p><strong>Subtotal:</strong> <span id="subtotal"></span></p>
                         <p><strong>ID:</strong> <span id="order-item-id"></span></p>
+                        <button type="button" class="btn btn-secondary return-refund-button">Return/Refund</button>
+                        <button type="button" class="btn btn-danger cancel-button">Cancel Order</button>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -251,24 +161,45 @@
             </div>
         </div>
 
-        <!-- SCRIPTS -->
         <script>
-        $(document).ready(function () {
-            $('#detailModal').on('show.bs.modal', function (event) {
-                var button = $(event.relatedTarget); // Button that triggered the modal
-                var orderDate = button.data('order-date');
-                var shipmentDate = button.data('shipment-date');
-                var subtotal = button.data('subtotal');
-                var orderItemId = button.data('order-item-id'); // Retrieve OrderItemID
+            document.addEventListener("DOMContentLoaded", function() {
+                // Get the modal element
+                var modal = document.getElementById('detailModal');
 
-                var modal = $(this);
-                modal.find('#orderDate').text(orderDate);
-                modal.find('#shipmentDate').text(shipmentDate);
-                modal.find('#subtotal').text(subtotal);
-                // Assuming you have an element with id 'orderItemId' in your modal to show the OrderItemID
-                modal.find('#orderItemId').text(orderItemId); // Display OrderItemID in the modal body
+                // Listen for the show.bs.modal event
+                modal.addEventListener('show.bs.modal', function(event) {
+                    // Button that triggered the modal
+                    var button = event.relatedTarget;
+
+                    // Extract data from the button
+                    var orderDate = button.getAttribute('data-order-date');
+                    var shipmentDate = button.getAttribute('data-shipment-date');
+                    var subtotal = button.getAttribute('data-subtotal');
+                    var orderId = button.getAttribute('data-order-item-id');
+
+                    // Update modal content
+                    document.getElementById('orderDate').textContent = orderDate;
+                    document.getElementById('shipmentDate').textContent = shipmentDate;
+                    document.getElementById('subtotal').textContent = subtotal;
+                    document.getElementById('order-item-id').textContent = orderId;
+
+                    // Update button based on order status
+                    var orderStatus = button.getAttribute('data-order-status');
+                    var returnRefundButton = modal.querySelector('.return-refund-button');
+                    var cancelButton = modal.querySelector('.cancel-button');
+
+                    if (orderStatus === 'Received') {
+                        returnRefundButton.style.display = 'inline-block';
+                        cancelButton.style.display = 'none';
+                    } else if (orderStatus === 'Confirmed') {
+                        returnRefundButton.style.display = 'none';
+                        cancelButton.style.display = 'inline-block';
+                    } else {
+                        returnRefundButton.style.display = 'none';
+                        cancelButton.style.display = 'none';
+                    }
+                });
             });
-        });
         </script>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>

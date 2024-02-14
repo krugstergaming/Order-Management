@@ -8,30 +8,6 @@
     <!-- Start: Main -->
     <div id="main">
 
-        <!-- Start: Topbar -->
-        <header id="topbar" class="ph10">
-          <div class="topbar-left">
-            <ul class="nav nav-list nav-list-topbar pull-left">
-              <li>
-                <a href="{{url('/')}}">Home Page</a>
-              </li>
-              <li>
-                <a href="#">Products</a>
-              </li>
-              <li class="active">
-                <a href="#">Orders</a>
-              </li>
-              <li>
-                <a href="#">Customers</a>
-              </li>
-              <li>
-                <a href="#">Settings</a>
-              </li>
-            </ul>
-          </div>
-        </header>
-        <!-- End: Topbar -->
-
         <!-- Begin: Content -->
         <section id="content" class="table-layout animated fadeIn">
 
@@ -40,39 +16,7 @@
 
             <!-- recent orders table -->
             <div class="panel">
-              <div class="panel-menu admin-form theme-primary">
-                <div class="row">
-                  <div class="col-md-4">
-                    <label for="filter-datepicker" class="field prepend-picker-icon">
-                      <input type="text" value="02/03/2015" id="filter-datepicker" name="filter-datepicker" class="gui-input" placeholder="Filter by Date">
-                    </label>
-                  </div>
-                  <div class="col-md-4">
-                    <label class="field select">
-                      <select id="filter-status" name="filter-status">
-                        <option value="0">Filter by Status</option>
-                        <option value="1">Edit</option>
-                        <option value="2">Delete</option>
-                        <option value="3">Active</option>
-                        <option value="4">Inactive</option>
-                      </select>
-                      <i class="arrow double"></i>
-                    </label>
-                  </div>
-                  <div class="col-md-4">
-                    <label class="field select">
-                      <select id="filter-customer" name="filter-customer">
-                        <option value="0">Filter Customer</option>
-                        <option value="1">Alan</option>
-                        <option value="2">Susan</option>
-                        <option value="3">Louis</option>
-                        <option value="4">Randy</option>
-                      </select>
-                      <i class="arrow double"></i>
-                    </label>
-                  </div>
-                </div>
-              </div>
+
               <div class="panel-body pn">
                 <div class="table-responsive">
                   <table class="table admin-form theme-warning tc-checkbox-1 fs13">
@@ -124,6 +68,7 @@
                               @endswitch
                           </td>
                           <td>
+
                             <form action="{{ url("/order/{$item->OrderItemID}/status") }}" method="POST">
                                 @csrf
                                 @method('PUT')
@@ -133,6 +78,7 @@
                                     @endforeach
                                 </select>
                             </form>
+                            
                         </td>
                       </tr>
                       @endforeach

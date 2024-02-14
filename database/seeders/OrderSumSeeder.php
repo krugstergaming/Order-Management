@@ -16,53 +16,53 @@ class OrderSumSeeder extends Seeder
         // Define an array of order summaries
         $orderSummaries = [
             [
-                'CustomerID' =>  1,
-                'OrderDate' => Carbon::parse('2024-02-01')->format('Y-m-d'),
-                'OrderStatus' => 'Confirmed',
-            ],
-            [
-                'CustomerID' =>  1,
-                'OrderDate' => Carbon::parse('2024-02-02')->format('Y-m-d'),
-                'OrderStatus' => 'Confirmed',
-            ],
-            [
-                'CustomerID' =>  1,
+                'CustomerID' =>  3,
                 'OrderDate' => Carbon::parse('2024-02-03')->format('Y-m-d'),
                 'OrderStatus' => 'Confirmed',
             ],
             [
-                'CustomerID' =>  1,
+                'CustomerID' =>  3,
+                'OrderDate' => Carbon::parse('2024-02-02')->format('Y-m-d'),
+                'OrderStatus' => 'Confirmed',
+            ],
+            [
+                'CustomerID' =>  3,
+                'OrderDate' => Carbon::parse('2024-02-03')->format('Y-m-d'),
+                'OrderStatus' => 'Confirmed',
+            ],
+            [
+                'CustomerID' =>  3,
                 'OrderDate' => Carbon::parse('2024-02-04')->format('Y-m-d'),
                 'OrderStatus' => 'Confirmed',
             ],
             [
-                'CustomerID' =>  1,
+                'CustomerID' =>  3,
                 'OrderDate' => Carbon::parse('2024-02-05')->format('Y-m-d'),
                 'OrderStatus' => 'Confirmed',
             ],
             [
-                'CustomerID' =>  1,
+                'CustomerID' =>  3,
                 'OrderDate' => Carbon::parse('2024-02-06')->format('Y-m-d'),
                 'OrderStatus' => 'Confirmed',
             ],
             [
-                'CustomerID' =>  1,
+                'CustomerID' =>  3,
                 'OrderDate' => Carbon::parse('2024-02-07')->format('Y-m-d'),
                 'OrderStatus' => 'Confirmed',
             ],
             [
-                'CustomerID' =>  1,
+                'CustomerID' =>  3,
                 'OrderDate' => Carbon::parse('2024-02-08')->format('Y-m-d'),
                 'OrderStatus' => 'Confirmed',
             ],
             [
-                'CustomerID' =>  1,
+                'CustomerID' =>  3,
                 'OrderDate' => Carbon::parse('2024-02-09')->format('Y-m-d'),
                 'OrderStatus' => 'Confirmed',
             ],
             [
-                'CustomerID' =>  1,
-                'OrderDate' => Carbon::parse('2024-02-10')->format('Y-m-d'),
+                'CustomerID' =>  3,
+                'OrderDate' => Carbon::parse('2024-02-30')->format('Y-m-d'),
                 'OrderStatus' => 'Confirmed',
             ],
         ];
